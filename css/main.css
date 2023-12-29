@@ -80,7 +80,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 130px;
+  width: 135px;
   height: 40px;
   font-size: 25px;
   padding: 5px 10px;
@@ -92,6 +92,65 @@ button {
 .main-title:hover {
   background-color: var(--orange-color);
   color: white;
+}
+.settings {
+  width: 250px;
+  display: block;
+  position: fixed;
+  left: -250px;
+  top: 150px;
+  background-color: white;
+  height: 150px;
+  padding: 20px;
+  transition: var(--main-transition);
+  z-index: 100;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
+  &.open {
+    left: 0;
+  }
+}
+.settings .setting-gear {
+  position: absolute;
+  left: 100%;
+  transform: translateY(-50%);
+  top: 50%;
+  background-color: white;
+  padding: 4px;
+  border-start-end-radius: 2px;
+  border-end-end-radius: 2px;
+  text-align: center;
+}
+.settings .colors {
+  position: relative;
+  padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  color: var(--orange-color);
+  text-align: center;
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 6px;
+  ul {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    li {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: black;
+      cursor: pointer;
+      opacity: 0.5;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
 }
 /* end global rules */
 /* start hero */
@@ -513,7 +572,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  .contact .form .feedback-message{
+  .contact .form .feedback-message {
     margin-left: 0;
     width: 262.5px;
   }
@@ -524,7 +583,7 @@ button {
 }
 /* end contact */
 /* start footer */
-.footer footer{
+.footer footer {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -535,10 +594,10 @@ button {
   justify-content: center;
   align-items: center;
 }
-.footer h3{
+.footer h3 {
   color: white;
 }
-.footer h3 span{
+.footer h3 span {
   color: var(--orange-color);
   font-weight: bold;
 }
